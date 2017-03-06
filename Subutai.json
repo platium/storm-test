@@ -1,0 +1,93 @@
+
+
+{
+  "name": "Modern-Real-Time-Big-Data-Stack",
+  "description": "Modern Real-Time Big Data Stack",
+  "nodes": [
+    {
+      "name": "hazelcast-1",
+      "template": "hazelcast@7e6a231303b69374c6c0e0a4f3df2ffcfc298d3a",
+      "peer_group": "HAZELCAST+TOMCAT-GROUP",
+      "size": "SMALL"
+    },
+    {
+      "name": "tomcat8-1",
+      "template": "tomcat8@4361d4648dbe94226a7dceab1978b8fc44f08212",
+      "peer_group": "HAZELCAST+TOMCAT-GROUP",
+      "size": "LARGE"
+    },
+    {
+      "name": "storm-1",
+      "template": "storm",
+      "peer_group": "STORM-GROUP",
+      "size": "LARGE"
+    },
+    {
+      "name": "kudu-1",
+      "template": "kudu@4c86793a1e76b0eba6a66a0288eced22d11a0c4c",
+      "peer_group": "KUDU-GROUP",
+      "size": "LARGE"
+    },
+    {
+      "name": "kafka-1",
+      "template": "apache-kafka@4c86793a1e76b0eba6a66a0288eced22d11a0c4c",
+      "peer_group": "KAFKA-GROUP",
+      "size": "LARGE"
+    },
+    {
+      "name": "apache-impala-1",
+      "template": "apache-impala@b986652a73f7446b7ea9a9ed4c8100e8ef3079f0",
+      "peer_group": "IMPALA-GROUP",
+      "size": "MEDIUM"
+    }
+  ],
+  "peerGroups": [
+    {
+      "name": "HAZELCAST+TOMCAT-GROUP",
+      "maxPeersInGroup": "1",
+      "pricingPref": {
+        "maxPrice": "20"
+      },
+      "hwPreferences": {
+        "avgCpuLoad": "10",
+        "minFreeRam": "512MiB",
+        "minFreeDiskSpace": "500MiB"
+      },
+      "zonePreferences": {},
+      "proximityPreferences": {}
+    },
+    {
+      "name": "STORM-GROUP",
+      "hwPreferences": {
+        "avgCpuLoad": "10",
+        "minFreeRam": "512MiB",
+        "minFreeDiskSpace": "500MiB"
+      }
+    },
+    {
+      "name": "KUDU-GROUP",
+      "hwPreferences": {
+        "avgCpuLoad": "10",
+        "minFreeRam": "512MiB",
+        "minFreeDiskSpace": "500MiB"
+      }
+    },
+    {
+      "name": "KAFKA-GROUP",
+      "hwPreferences": {
+        "avgCpuLoad": "10",
+        "minFreeRam": "512MiB",
+        "minFreeDiskSpace": "500MiB"
+      }
+    },
+    {
+      "name": "IMPALA-GROUP",
+      "hwPreferences": {
+        "avgCpuLoad": "10",
+        "minFreeRam": "512MiB",
+        "minFreeDiskSpace": "500MiB"
+      }
+    }
+  ],
+  "configuration": {}
+}
