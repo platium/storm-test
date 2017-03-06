@@ -18,7 +18,7 @@
     },
     {
       "name": "storm-1",
-      "template": "storm",
+      "template": "storm@7e6a231303b69374c6c0e0a4f3df2ffcfc298d3a",
       "peer_group": "STORM-GROUP",
       "size": "LARGE"
     },
